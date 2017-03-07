@@ -2,9 +2,9 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.ca.nbiapps</groupId>
-	<artifactId>nbiservice-wsdlproject</artifactId>
+	<artifactId>nbiservice-wsdl2java-gen</artifactId>
 	<version>1.1.2</version>
-	<name>wsdlproject</name>
+	<name>wsdl2java-gen</name>
 	<packaging>jar</packaging>
 	<dependencies>       
 	  <dependency>
@@ -29,7 +29,13 @@
 		<artifactId>xmlbeans</artifactId>
 		<version>2.3.0</version>
 	</dependency> 
-	</dependencies>
+	
+	<dependency>
+	    <groupId>xerces</groupId>
+	    <artifactId>xercesImpl</artifactId>
+	    <version>2.11.0</version>
+	</dependency>
+     </dependencies>
 
 	<build>
 	  <plugins>
@@ -43,13 +49,11 @@
 	            <goal>wsdl2code</goal>
 	          </goals>
 	          <configuration>
-	            <packageName>com.foo.myservice</packageName>
-	            <wsdlFile>src/main/resource/ARCOT_WSDL.wsdl</wsdlFile>
-	            <databindingName>xmlbeans</databindingName>
+	            <packageName>com.ca.soapservice</packageName>
+	            <wsdlFile>src/main/resources/ARCOT_WSDL.wsdl</wsdlFile>
 	            <outputDirectory>${basedir}</outputDirectory>
 	            <skipBuildXML>true</skipBuildXML>
-	            <overWrite>true</overWrite>
-	            <databindingName>xmlbeans</databindingName>
+	            <overWrite>true</overWrite>	     
 	          </configuration>
 	        </execution>
 	      </executions>
