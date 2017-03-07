@@ -49,7 +49,7 @@
             * override this method for handling normal response from arctServices operation
             */
            public void receiveResultarctServices(
-                    com.ca.soapservice.ServiceStub.ARCResponse result
+                    xsd.arcresponsetargetnamespace.ARCResponseDocument result
                         ) {
            }
 
